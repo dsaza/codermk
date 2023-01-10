@@ -3,7 +3,7 @@
   "version": "0.9.5",
   "description": "A workflow to create a web layout (code labs)",
   "bin": {
-    "codermk": "index.js"
+    "codermk": "bin/codermk.js"
   },
   "type": "module",
   "keywords": [

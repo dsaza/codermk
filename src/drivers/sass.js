@@ -1,9 +1,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { compile as compileSass, SassString } from 'sass'
+import sass from 'sass'
 import { Mode, Tasks } from '../utils/globals.js'
 import { getFiles } from '../utils/globs.js'
 import { useConfig, useError, useMode } from '../hooks/all.js'
+
+const { compile: compileSass, SassString } = sass
 
 function compileFiles(files = []) {
 	const { config } = useConfig()

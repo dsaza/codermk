@@ -78,7 +78,7 @@ function resetConsole() {
 function getWorkingMessage(task) {
 	let messages = {
 		[Tasks.cleaner]: pc.white('Clean environment space'),
-		[Tasks.cleanerFinal]: pc.white('Clean final build'),
+		[Tasks.cleanerFinal]: pc.white('Clean final'),
 		[Tasks.views]: pc.green('Twig templates'),
 		[Tasks.viewsPretty]: pc.green('Twig to HTML beautiful'),
 		[Tasks.scripts]: pc.yellow('Javascript files'),

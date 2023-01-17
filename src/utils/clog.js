@@ -1,4 +1,5 @@
 import pc from 'picocolors'
+import emoji from 'node-emoji'
 import { Mode, Tasks } from '../utils/globals.js'
 import { useConfig, useError, useMode } from '../hooks/all.js'
 import { getTime } from './helpers.js'
@@ -37,7 +38,9 @@ export function clogHead() {
 
 	let message = Mode.dev === mode ? 'Starting up your environment' : 'Building the web layout'
 	resetConsole()
-	console.log(pc.bold(pc.blue('[C/] CODERMK')) + '      🤖 ' + pc.gray(message) + '\n')
+
+	const iconRobot = emoji.get('robot_face')
+	console.log(pc.bold(pc.blue('[C/] CODERMK')) + `      ${iconRobot} ` + pc.gray(message) + '\n')
 }
 
 export function clogWorking(task) {
@@ -52,7 +55,7 @@ export function clogDefault(task) {
 
 	if (!error.status) {
 		let message = task === Tasks.server ? 'We are ready' : 'Everything is going great'
-		let icon = task === Tasks.server ? '⭐' : '✅'
+		let icon = task === Tasks.server ? emoji.get('star') : emoji.get('white_check_mark')
 
 		console.log(pc.bold(pc.blue('[C/] CODERMK')) + `      ${icon} ` + pc.gray(message))
 		console.log(pc.bold(pc.white('\nYour development server: ')) + pc.cyan(`http://localhost:${config.port}`))
@@ -62,7 +65,9 @@ export function clogDefault(task) {
 			: console.log('\n' + pc.gray(getTime()) + ' The last changes were from... ' + getWorkingMessage(task))
 		
 	} else {
-		console.log(pc.bold(pc.blue('[C/] CODERMK')) + '      ❌ ' + pc.gray('Have something to correct'))
+		const iconError = emoji.get('x')
+
+		console.log(pc.bold(pc.blue('[C/] CODERMK')) + `      ${iconError} ` + pc.gray('Have something to correct'))
 		console.log(pc.bold(pc.red('\nAn error has occurred\n')))
 		console.log(pc.red(error.message))
 	}

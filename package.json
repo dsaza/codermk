@@ -23,6 +23,7 @@
     "fs-extra": "11.1.0",
     "glob": "8.0.3",
     "glob-watcher": "5.0.5",
+    "node-emoji": "^1.11.0",
     "nunjucks": "3.2.3",
     "picocolors": "1.0.0",
     "postcss": "8.4.20",

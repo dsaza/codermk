@@ -9,7 +9,7 @@ let config = {
 	port: 5000,
 }
 
-function setInputConfig(inputConfig) {
+function setConfig(inputConfig) {
 	config = {
 		...config,
 		...inputConfig
@@ -22,6 +22,6 @@ function setInputConfig(inputConfig) {
 export default function useConfig() {
 	return {
 		config,
-		setInputConfig
+		setConfig
 	}
 }

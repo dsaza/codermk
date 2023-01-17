@@ -6,7 +6,7 @@ async function main() {
 	const config = JSON.parse(fs.readFileSync(path.join(process.cwd(), './codermk.json')))
 	const mode = process.argv[2]
 
-	bootstrap(mode, config)
+	await bootstrap(mode, config)
 }
 
 main()

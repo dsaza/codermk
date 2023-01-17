@@ -4,35 +4,6 @@ import { Mode, Tasks } from '../utils/globals.js'
 import { useConfig, useError, useMode } from '../hooks/all.js'
 import { getTime } from './helpers.js'
 
-function getError() {
-	const { ctxErrors } = useError()
-
-	let error = {
-		status: false,
-		message: ''
-	}
-	
-	if (ctxErrors.scripts.status) {
-		error.status = ctxErrors.scripts.status
-		error.message = ctxErrors.scripts.message
-		return error
-	}
-
-	if (ctxErrors.views.status) {
-		error.status = ctxErrors.views.status
-		error.message = ctxErrors.views.message
-		return error
-	}
-	
-	if (ctxErrors.styles.status) {
-		error.status = ctxErrors.styles.status
-		error.message = ctxErrors.styles.message
-		return error
-	}
-
-	return error
-}
-
 export function clogHead() {
 	const { mode } = useMode()
 
@@ -48,31 +19,46 @@ export function clogWorking(task) {
 }
 
 export function clogDefault(task) {
+	const { mode } = useMode()
 	const { config } = useConfig()
+	const { getError } = useError()
 	const error = getError()
 	
 	resetConsole()
 
-	if (!error.status) {
-		let message = task === Tasks.server ? 'We are ready' : 'Everything is going great'
-		let icon = task === Tasks.server ? emoji.get('star') : emoji.get('white_check_mark')
-
-		console.log(pc.bold(pc.blue('[C/] CODERMK')) + `      ${icon} ` + pc.gray(message))
-		console.log(pc.bold(pc.white('\nYour development server: ')) + pc.cyan(`http://localhost:${config.port}`))
-
-		task === Tasks.server 
-			? console.log('\n' + pc.gray(getTime()) + ' The development server is ready to listen to your changes')
-			: console.log('\n' + pc.gray(getTime()) + ' The last changes were from... ' + getWorkingMessage(task))
-		
-	} else {
+	if (error.status) {
 		const iconError = emoji.get('x')
 
 		console.log(pc.bold(pc.blue('[C/] CODERMK')) + `      ${iconError} ` + pc.gray('Have something to correct'))
 		console.log(pc.bold(pc.red('\nAn error has occurred\n')))
 		console.log(pc.red(error.message))
+		console.log('')
+		
+		return
 	}
 
-	console.log('')
+	if (!error.status) {
+		if (mode == Mode.dev) {
+			const message = task === Tasks.server ? 'We are ready' : 'Everything is going great'
+			const icon = task === Tasks.server ? emoji.get('star') : emoji.get('white_check_mark')
+	
+			console.log(pc.bold(pc.blue('[C/] CODERMK')) + `      ${icon} ` + pc.gray(message))
+			console.log(pc.bold(pc.white('\nYour development server: ')) + pc.cyan(`http://localhost:${config.port}`))
+	
+			task === Tasks.server 
+				? console.log('\n' + pc.gray(getTime()) + ' The development server is ready to listen to your changes')
+				: console.log('\n' + pc.gray(getTime()) + ' The last changes were from... ' + getWorkingMessage(task))
+		}
+
+		if (mode == Mode.build) {
+			console.log('App compilada exitosamente')
+		}
+		
+		console.log('')
+
+		return
+	}
+
 }
 
 function resetConsole() {

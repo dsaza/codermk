@@ -35,3 +35,23 @@ export function getTime() {
 
 	return `[${hourPrint}:${minutesPrint}:${secondsPrint} ${ampm}]`
 }
+
+export function formatBytes(bytes = 0) {
+	let kb = (bytes / 1000).toFixed(2)
+	kb = kb < 1 ? 1 : roundDecimalNumber(kb, 1)
+
+	return `${kb} KB`
+}
+
+export function roundDecimalNumber(num, decimals = 2) {
+	let sign = (num >= 0 ? 1 : -1)
+	num = num * sign
+	if (decimals === 0) //con 0 decimals
+		return sign * Math.round(num)
+	// round(x * 10 ^ decimals)
+	num = num.toString().split('e')
+	num = Math.round(+(num[0] + 'e' + (num[1] ? (+num[1] + decimals) : decimals)))
+	// x * 10 ^ (-decimals)
+	num = num.toString().split('e')
+	return sign * (num[0] + 'e' + (num[1] ? (+num[1] - decimals) : -decimals))
+}

@@ -1,6 +1,7 @@
 import pc from 'picocolors'
 import emoji from 'node-emoji'
 import { Mode, Tasks } from '../utils/globals.js'
+import { getBuildFiles } from './globs.js'
 import { useConfig, useError, useMode } from '../hooks/all.js'
 import { getTime } from './helpers.js'
 
@@ -18,7 +19,7 @@ export function clogWorking(task) {
 	console.log(pc.gray(getTime()) + ' Working on... ' + getWorkingMessage(task))
 }
 
-export function clogDefault(task) {
+export async function clogDefault(task) {
 	const { mode } = useMode()
 	const { config } = useConfig()
 	const { getError } = useError()
@@ -51,19 +52,38 @@ export function clogDefault(task) {
 		}
 
 		if (mode == Mode.build) {
-			console.log('App compilada exitosamente')
+			const icon = emoji.get('medal')
+
+			console.log(pc.bold(pc.blue('[C/] CODERMK')) + `      ${icon} ` + pc.gray('The web layout is already packaged!'))
+			console.log(pc.bold(pc.white('\nThe following files have been processed:')))
+			
+			await printBuildFiles({ icon: 'page_facing_up', title: 'HTML pages', color: 'green', typeFile: 'html' })
+			await printBuildFiles({ icon: 'nail_care', title: 'CSS Styles', color: 'blue', typeFile: 'css' })
+			await printBuildFiles({ icon: 'package', title: 'Javascript files', color: 'yellow', typeFile: 'js' })
+
+			console.log(`\n\n${pc.gray('And all static files were copied.')}`)
 		}
 		
 		console.log('')
-
-		return
 	}
-
 }
 
 function resetConsole() {
 	process.stdout.write('\x1Bc')
 	console.log('')
+}
+
+async function printBuildFiles({ icon, title, color, typeFile } = { icon: '', title: '', color: '', typeFile: '' }) {
+	const pcolor = pc[color]
+	const files = await getBuildFiles(typeFile)
+
+	if (files.length > 0) {
+		console.log('\n' + emoji.get(icon) + pc.bold(pcolor(` ${title}`)) + '\n')
+		console.log(`${files.map((file, index) => {
+			if (index !== files.length - 1) return pcolor(`• ${file}\n`)
+			return pcolor(`• ${file}`)
+		}).join('')}`)
+	}
 }
 
 function getWorkingMessage(task) {

@@ -73,7 +73,7 @@ export async function renderTemplate() {
 	const { clearError } = useError()
 	const { getDataJson } = useJson()
 
-	const files = await getFiles('./src/views/pages/**/*.twig')
+	const files = await getFiles('./src/views/pages/*.twig')
 	const data = await getDataJson()
 
 	let renderTemplateFiles

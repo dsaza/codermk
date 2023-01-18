@@ -1,20 +1,28 @@
 {
-  "name": "codermk",
+	"name": "codermk",
   "version": "0.9.5",
+	"license": "MIT",
+	"author": "Dayron Daza",
   "description": "A workflow to create a web layout (code labs)",
+	"main": "index.js",
+	"keywords": [
+		"sass",
+		"nunjucks",
+		"esbuild",
+		"workflow"
+	],
   "bin": {
     "codermk": "bin/codermk.js"
   },
   "type": "module",
-  "keywords": [
-    "sass",
-    "nunjucks",
-    "esbuild",
-    "workflow"
-  ],
-  "scripts": {},
-  "author": "Dayron Daza",
-  "license": "MIT",
+  "repository": {
+		"type": "git",
+		"url": "git+https://github.com/dsaza/codermk.git"
+	},
+	"bugs": {
+    "url": "https://github.com/dsaza/codermk/issues"
+  },
+	"homepage": "https://github.com/dsaza/codermk/tree/main/#readme",
   "dependencies": {
     "autoprefixer": "10.4.13",
     "browser-sync": "2.27.10",

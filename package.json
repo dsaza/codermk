@@ -5,6 +5,10 @@
 	"author": "Dayron Daza",
 	"description": "A workflow to create a web layout (code labs)",
 	"main": "index.js",
+	"engines": {
+		"npm": ">=8.19.2",
+		"node": ">=16.18.0"
+	},
 	"keywords": [
 		"sass",
 		"nunjucks",

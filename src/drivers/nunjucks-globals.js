@@ -24,11 +24,11 @@ export function getEnvGlobals(data = []) {
 		isBuild: () => mode === Mode.build,
 
 		/**
-		 * Function to set a static path
+		 * Function to set a public path
 		 * @param dir string
 		 * @returns	string 
 		 */
-		static: (dir = '') => mode === Mode.build
+		public: (dir = '') => mode === Mode.build
 			? hrefCacheBust(`./assets/${dir}`)
 			: `/${dir}`,
 		

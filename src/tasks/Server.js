@@ -11,7 +11,7 @@ export default function Server() {
 	clogWorking(Tasks.server)
 	
 	bs.init({
-		server: [path.join(config.rootDir, './static'), config.tmpDir],
+		server: [path.join(config.rootDir, './public'), config.tmpDir],
 		logLevel: 'silent',
 		notify: false,
 		watch: true,

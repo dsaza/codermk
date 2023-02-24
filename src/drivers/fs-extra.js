@@ -4,7 +4,7 @@ import { useConfig } from '../hooks/all.js'
 
 export function copyDir() {
 	const { config } = useConfig()
-	let source = path.join(config.rootDir, './static')
+	let source = path.join(config.rootDir, './public')
 	let destination = path.join(config.outDir, './assets')
 
 	return new Promise(resolve => {

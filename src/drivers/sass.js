@@ -19,7 +19,7 @@ function compileFiles(files = []) {
 				sourceMap: true,
 				sourceMapIncludeSources: true,
 				functions: {
-					'get_static_init()': function () {
+					'get_public_init()': function () {
 						let url = mode === Mode.dev
 							? `/`
 							: `../`

@@ -61,7 +61,7 @@ export async function clogDefault(task) {
 			await printBuildFiles({ icon: 'nail_care', title: 'CSS Styles', color: 'blue', typeFile: 'css' })
 			await printBuildFiles({ icon: 'package', title: 'Javascript files', color: 'yellow', typeFile: 'js' })
 
-			console.log(`\n\n${pc.gray('And all static files were copied.')}`)
+			console.log(`\n\n${pc.gray('And all public files were copied.')}`)
 		}
 		
 		console.log('')

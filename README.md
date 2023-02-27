@@ -24,6 +24,7 @@
 
 - [Preprocesador CSS](#-preprocesador-css)
   - [¿Qué es SASS?](#qué-es-sass)
+  - [Metodología recomendada (SUIT CSS)](#metodología-recomendada-suit-css)
   - [Estructura de archivos SCSS](#estructura-de-archivos-scss)
   - [SASS functions](#sass-functions)
   - [SASS mixins](#sass-mixins)
@@ -152,6 +153,9 @@ SASS es un preprocesador de CSS compatible con todas sus versiones. Por lo tanto
 
 Se recomienda ver su documentación [aquí](https://sass-lang.com/guide).
 
+## Metodología recomendada (SUIT CSS)
+
+
 ## Estructura de archivos SCSS
 SASS permite crear dos tipos de extensiones para sus archivos: `.sass` y `.scss`. La estructura de archivos en este caso será con la extensión `.scss`. Todo lo relacionado a `SASS` estará ubicado en la carpeta `src/theme`.
 
@@ -176,6 +180,7 @@ src
 - `functions`: [Ver documentación](https://sass-lang.com/documentation/at-rules/function).
 - `mixins`: [Ver documentación](https://sass-lang.com/documentation/at-rules/mixin).
 - `styles`: Esta es la carpeta principal ya que todos los archivos que se encuentren dentro de ella serán los que se compilan.
+- `utilities`: Contiene archivos que crean las clases utilitarias necesarias.
 
 ### SASS functions
 Se encuentran `functions` previamente hechos y tienen funcionalidades extras para contruir los estilos de la maqueta de una mejor manera.

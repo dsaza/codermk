@@ -97,3 +97,5 @@ La manera en que se linkean los assets como imágenes, archivos css, archivos js
 | **page** | Se usa para linkear páginas `.twig` hermanas. | - `namePage`: _(string)_ nombre de la página sin la extensión <br> - `optionsURL`: _(string)_ _(optional)_ información adicional como `#hash` o `?parameters` | - `page('nosotros')` <br> - `page('nostros', '#historia')` <br> - `page('nosotros', '/?lang=en')`|
 | **isDev** | _(Adicional)_ Está funcion retorna un `boolean` y es útil si se desea saber si la maqueta está en desarrollo. | - | `isDev()` |
 | **isBuild** | _(Adicional)_ Está funcion retorna un `boolean` y es útil si se desea saber si la maqueta está en producción. | - | `isBuild()` |
+
+**[⬆ Volver al índice](#-índice)**

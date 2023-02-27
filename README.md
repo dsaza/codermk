@@ -34,7 +34,8 @@
   - [Estructura de archivos JS](#estructura-de-archivos-js)
   - [Constantes JS](#constantes-js)
  
-- Font icons
+- [Font icons](#-font-icons)
+  - [Estructura de iconos](#estructura-de-iconos)
   - [¿Cómo usar iconos SVG?](#cómo-usar-iconos-svg)
 
 <br>
@@ -140,8 +141,8 @@ La manera en que se linkean los assets como imágenes, archivos css, archivos js
 | **style** | Se usa para linkear los archivos `.scss` que serán compilados. | - `fileScss`: _(string)_ nombre del archivo `.scss` a compilar | `style('main.scss')` |
 | **module** | Se usa para linkear los archivos `.js` que serán compilados. | - `fileJs`: _(string)_ nombre del archivo `.js` a compilar | `module('main.js')` |
 | **page** | Se usa para linkear páginas `.twig` hermanas. | - `namePage`: _(string)_ nombre de la página sin la extensión <br> - `optionsURL`: _(string)_ _(optional)_ información adicional como `#hash` o `?parameters` | - `page('nosotros')` <br> - `page('nostros', '#historia')` <br> - `page('nosotros', '/?lang=en')`|
-| **isDev** | _(Adicional)_ Está funcion retorna un `boolean` y es útil si se desea saber si la maqueta está en desarrollo. | - | `isDev()` |
-| **isBuild** | _(Adicional)_ Está funcion retorna un `boolean` y es útil si se desea saber si la maqueta está en producción. | - | `isBuild()` |
+| **isDev** | _(Adicional)_ Esta función retorna un `boolean` y es útil si se desea saber si la maqueta está en desarrollo. | - | `isDev()` |
+| **isProduction** | _(Adicional)_ Esta función retorna un `boolean` y es útil si se desea saber si la maqueta está en producción. | - | `isBuild()` |
 
 **[⬆ Volver al índice](#-índice)**
 
@@ -285,5 +286,55 @@ Ejemplos:
 
 **[⬆ Volver al índice](#-índice)**
 
-## 💥 ESCMAScript
+<br>
 
+## 💥 ECMAScript
+Los navegadores actuales no soportan las nuevas características de Javascript y estas facilitan la construcción de aplicaciones web, para ello se plantea utilizar `Esbuild` como empaquetador de aplicaciones pero `Codermk` solo usa la opción de generar código de javascript compatible para la mayoría de navegadores.
+
+### ¿Qué es Esbuild?
+[ESBuild](https://esbuild.github.io/) es el empaquetador más recientemente popular de JavaScript. Su principal característica y ventaja frente al resto de empaquetadores es su velocidad de compilación.
+
+### Estructura de archivos JS
+
+```
+src
+└── application
+|   ├── components
+|   ├── modules
+|   └── stores
+```
+
+- `components`: en esta carpeta se ubicarán los componentes que la maqueta necesitará, la forma en la que se construya cada componente es de libre elección según la funcionalidad de dicho componente.
+- `modules`: es la carpeta principal, cada archivo `js` ubicado aquí será compilado.
+- `stores`: si es necesario utilizar variables globales que guarden información de la aplicación se recomienda crear `stores` los cuales leen o modifican las variables, por defecto se crea el store `mkStore`.
+
+Si es necesario se pueden crear más carpetas según el enfoque de la maqueta.
+
+### Constantes JS
+`Esbuild` tiene acceso a las datos de las colecciones JSON y también obtiene el estado de la maqueta, si está en desarrollo o es la versión compilada.  
+
+Estas constantes son:
+- `__mkdata`: Al igual que desde el motor de plantillas, `Esbuild` tiene un objeto de todas las colecciones.
+- `__mode`: Es un string que tendrá dos valores, `production` ó `development`.
+
+## 🥳 Font icons
+Usar iconos SVG es un reto al momento de maquetar, `Codermk` utiliza el paquete [Fantasticon](https://www.npmjs.com/package/fantasticon) el cual permite convertir SVG o fuentes y también genera un CSS que contendrá la clase de cada icono.
+
+### [Estructura de iconos]
+```
+src
+└── icons
+|   └── [00]code-labs.svg
+```
+
+Todos los iconos tienen que estar dentro de la carpeta `src/icons` y tienen una nomenclatura especial.
+
+- Deben tener un `ID` incremental, este empieza en `00`, el siguiente será `01`, esto hasta un máximo de `99`, el `ID` debe estar dentro de dos corchetes `[]` y se escriben al principio del nombre del archivo.
+- Seguido del `ID` y sin espacios debe ir el nombre del icono, este debe ser único y jamás repetirse, también debe ser escrito en minúsculas y los espacios se harán con un guión `-`. Por ejemplo, `[01]arrow-right.svg`.
+
+### ¿Cómo usar iconos SVG?
+Si se usa como clase dentro del HTML, la clase tendrá siempre un prefijo `ci--` y en seguida de esto escribir el nombre del icono; se recomienda usar la etiqueta `span` para insertar un icono. Por ejemplo:
+
+```html
+<span class="ci--code-labs"></span>
+```

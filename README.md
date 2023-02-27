@@ -43,6 +43,8 @@ Los archivos JSON serán creados dentro de la carpeta `./data`.
 
 Por defecto ya existe una colección creada llamada `site.json`.
 
+**[⬆ Volver a índice](#índice)**
+
 ```
 data  
 | site.json

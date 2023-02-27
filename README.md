@@ -28,5 +28,5 @@
   - [Estructura de archivos JS](#estructura-de-archivos-js)
   - [Constantes JS](#constantes-js)
  
- - Font icons
-  - [¿Cómo usar los iconos?](#cómo-usar-los-iconos)
+- Font icons
+  - [¿Cómo usar iconos SVG?](#cómo-usar-iconos-svg)

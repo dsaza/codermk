@@ -74,3 +74,5 @@ La manera en que se linkean los assets como imágenes, archivos css, archivos js
 
 - **public**: Se usa para linkear archivos que se encuentren dentro de la carpeta `public`, recibe como parámetro un `string` que será la ruta del archivo tomando como raíz la carpeta `public`. Por ejemplo, `public('favicon.ico')`.
 - **style**: Se usa para linkear los archivos `.scss` que serán compilados, recibe como parámetro un `string` que será el nombre del archivo a compilar. Por ejemplo `style('main.scss')`.
+- **module**: Se usar para linker los arvhios `.js` que serán compilados, recibe como parámetro un `string` que será el nombre del archivo a compilar. Por ejemplo `module('main.js')`.
+- **page**: Se usar para linker páginas `.twig` hermanas. Recibe dos parámetros, el primero `string` será el nombre de la página sin la extensión, por ejemplo, `page('nosotros')`; el segundo parámetro `string` es opcional y servirá para agregarle a la URL de la página información adicional como `#hash` o `?parametros`, por ejemplo, `page('nostros', '#historia')` ó `page('nosotros', '/?lang=en')`

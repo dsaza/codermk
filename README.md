@@ -162,7 +162,7 @@ src
 |   ├── config
 |   ├── core
 |   ├── extends
-|   ├── fontshttps://github.com/sindresorhus/modern-normalize
+|   ├── fonts
 |   ├── functions
 |   ├── mixins
 |   └── styles

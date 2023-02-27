@@ -317,6 +317,10 @@ Estas constantes son:
 - `__mkdata`: Al igual que desde el motor de plantillas, `Esbuild` tiene un objeto de todas las colecciones.
 - `__mode`: Es un string que tendrá dos valores, `production` ó `development`.
 
+**[⬆ Volver al índice](#-índice)**
+
+<br>
+
 ## 🥳 Font icons
 Usar iconos SVG es un reto al momento de maquetar, `Codermk` utiliza el paquete [Fantasticon](https://www.npmjs.com/package/fantasticon) el cual permite generar archivos de fuentes y el css correspondiente a partir de iconos SVG.
 
@@ -350,3 +354,7 @@ Si se usa como estilo CSS, cada icono solo se puede utilizar en pseudo-elementos
   }
 }
 ```
+
+**[⬆ Volver al índice](#-índice)**
+
+<br>

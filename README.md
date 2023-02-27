@@ -22,7 +22,7 @@
   - [Constantes Nunjucks](#constantes-nunjucks)
   - [Nunjucks mixins](#nunjucks-mixins)
 
-- Preprocesador CSS
+- [Preprocesador CSS](#-preprocesador-css)
   - [¿Qué es SASS?](#qué-es-sass)
   - [Estructura de archivos SCSS](#estructura-de-archivos-scss)
   - [SASS mixins](#sass-mixins)
@@ -96,7 +96,7 @@ La colección `site.json` contiene una propiedad `title` la cual corresponde al 
 **[⬆ Volver al índice](#-índice)**
 
 ## 🛵 Motor de plantillas
-Al reutilizar HTML en el momento de maquetar se presentan varios problemas, así que `Nunjucks` ayudará a realizar esta tarea.
+Al utilizar HTML en el momento de maquetar se presentan varios problemas, código repetitivo, archivos extensos y desorden. `Nunjucks` aportará super poderes para hacer la estructura de la maqueta más fácil.
 
 ### ¿Qué es Nunjucks?
 Es un motor de plantillas rico y potente para JavaScript muy inspirado en [jinja2](https://jinja.palletsprojects.com/en/3.1.x/) (Motor de plantillas para [Django](https://www.djangoproject.com/)). Permite características como autoescapado, herencia de bloques, macros, control asíncrono y muchos más.  
@@ -142,3 +142,34 @@ La manera en que se linkean los assets como imágenes, archivos css, archivos js
 | **isBuild** | _(Adicional)_ Está funcion retorna un `boolean` y es útil si se desea saber si la maqueta está en producción. | - | `isBuild()` |
 
 **[⬆ Volver al índice](#-índice)**
+
+## 💅 Preprocesador CSS
+Las hojas de estilo de un sitio web cada vez son más complejas y difíciles de mantener. En este punto es dónde un preprocesador de CSS puede ser de gran utilidad y SASS permite emplear funcionalidades que no existen en CSS.
+
+## ¿Qué es SASS?
+SASS es un preprocesador de CSS compatible con todas sus versiones. Por lo tanto, se trata de una herramienta utilizada por los desarrolladores web para traducir un código de hojas de estilo no estándar a un código CSS estándar, legible por la mayoría de los navegadores. La principal utilidad de SASS es la de hacer más simple la escritura del código CSS, además de brindar diversas utilidades que a día de hoy el CSS no puede ofrecer.
+
+Se recomienda ver su documentación [aquí](https://sass-lang.com/guide).
+
+## Estructura de archivos SCSS
+SASS permite crear dos tipos de extensiones para sus archivos: `.sass` y `.scss`. La estructura de archivos en este caso será con la extensión `.scss`. Todo lo relacionado a `SASS` estará ubicado en la carpeta `src/theme`.
+
+```
+src
+└── theme
+|   ├── components
+|   ├── config
+|   ├── core
+|   ├── extends
+|   ├── fonts
+|   ├── functions
+|   ├── mixins
+|   └── styles
+```
+
+- `components`: aquí se ubicarán los estilos para los componentes.
+- `config`: aquí se ubicarán las variables que utilizará el proyecto.
+- `core`: contiene los archivos que aplican estilos globales al proyecto, por defecto ya contiene un formateador de estilos, que es el mismo que utiliza [TailwindCSS](https://tailwindcss.com/)
+- `extends`: [Documentación](https://sass-lang.com/documentation/at-rules/extend)
+- `fonts`: Aquí se guardan todas las importaciones de fuentes que necesite la maqueta.
+- `functions`: [Documentación](https://sass-lang.com/documentation/at-rules/function)

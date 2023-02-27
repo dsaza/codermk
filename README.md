@@ -7,8 +7,17 @@
 
 ---
 
-- [Índice](#índice)
-  - [Motor de plantillas](#motor-de-plantilals)
-    - [¿Qué es Nunjucks?](#qué-es-nunjucks)
-
----
+<details>
+  <summary>Contenido</summary>
+  <ol>
+    <li>
+      Motor de plantillas
+      <ul>
+        <li><a href="#qué-es-nunjucks">¿Qué es Nunjucks?</a></li>
+        <li><a href="#qué-extensión-de-archivos-utilizar">¿Qué extensión de archivos utilizar?</a></li>
+        <li><a href="#qué-extensión-de-visual-studio-code-instalar">¿Qué extensión de Visual Studio Code instalar?</a></li>
+        <li><a href="#nunjucks-mixins">Nunjucks Mixins</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>

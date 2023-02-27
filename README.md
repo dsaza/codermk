@@ -36,4 +36,18 @@
 Para que el uso de información general sea más óptima de utilizar se plantea el uso de archivos JSON que contengan los datos relevantes. El motor de plantillas HTML y javascript tendrán acceso a la información de los JSON mediante constantes.
 
 ### ¿Cómo usar?
-Lorem
+Cada archivo JSON hará la función de coleccionar los datos, tal como lo hace una tabla en SQL.
+
+### Estructura de archivos JSON
+Los archivos JSON serán creados dentro de la carpeta `./data`.
+
+Por defecto ya existe una colección creada llamada `site.json`.
+
+```
+data  
+| site.json
+```
+
+La colección `site.json` contiene una propiedad llamada `title` la cual corresponde al título de la página HTML del sitio a maquetar.
+
+## Motor de plantillas

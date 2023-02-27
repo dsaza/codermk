@@ -66,6 +66,23 @@ Nunjucks es muy inspirado en [jinja2](https://jinja.palletsprojects.com/en/3.1.x
 ### ¿Qué extensión de Visual Studio Code instalar?
 Se recomienda instalar la extensión [Twig Language](https://marketplace.visualstudio.com/items?itemName=mblode.twig-language) del autor _[mblode](https://marketplace.visualstudio.com/publishers/mblode)_. Esta extensión dará soporte para la sintaxix y varios snippets.
 
+### Estructura de archivos
+```
+src
+└── views
+|   ├── components
+|   ├── layouts
+|   ├── pages
+|   └── partials
+```
+
+Todo lo relacionado a `Nunjucks` estará ubicado en la carpeta `src/views` y se distribuirá de la siguiente manera:
+
+- `components`: aquí se ubicarán los macros o componentes dinámicos de la maqueta.
+- `layouts`: aquí se ubicarán los esqueletos de la maqueta que se heredarán las páginas.
+- `pages`: esta es la carpeta principal ya que los archivos que se encuentren allí serán los compilados como HTML y los que conformarán la maqueta.
+- `partials`: aquí se guardarán trozos de código HTML los cuales pueden ser reutilizados en cualquier parte.
+
 ### Constantes Nunjucks
 Como se mencionó anteriormente, las colecciones JSON de la carpeta `data` podrán ser usadas en el motor de plantillas, para ello existe una constante `__mkdata` la cual es un objeto que contiene cada colección JSON como propiedad. Por ejemplo, si se desea utilizar la propiedad `title` de la colección `site.json` se puede acceder mediante `__mkdata.site.title`.
 
@@ -74,10 +91,9 @@ La manera en que se linkean los assets como imágenes, archivos css, archivos js
 
 | Mixin | Descripción | Parámetros | Ejemplo |
 | ----- | ----------- | ---------- | ------- |
-| **public** | Se usa para linkear archivos que se encuentren dentro de la carpeta `public` | `linkFromPublic` _(string)_: ruta del archivo tomando como raíz la carpeta `public` | `public('favicon.ico')` |
-| **style** | Se usa para linkear los archivos `.scss` que serán compilados | `fileScss` _(string)_ : nombre del archivo `.scss` a compilar | `module('main.scss')` |
-| **module** | Se usa para linker los arvhios `.js` que serán compilados | `fileJs` _(string)_ : nombre del archivo `.js` a compilar | `module('main.js')` |
-| **page** | Se usa para linker páginas `.twig` hermanas | `namePage` _(string)_ : nombre de la página sin la extensión  
-`addURL` _(string)_ _(optional)_ : es opcional y servirá para agregarle a la URL de la página información adicional como `#hash` o `?parametros` | `page('nosotros')`  
-`page('nostros', '#historia')`  
-`page('nosotros', '/?lang=en')`|
+| **public** | Se usa para linkear archivos que se encuentren dentro de la carpeta `public`. | - `linkFromPublic`: _(string)_ ruta del archivo tomando como raíz la carpeta `public` | `public('favicon.ico')` |
+| **style** | Se usa para linkear los archivos `.scss` que serán compilados. | - `fileScss`: _(string)_ nombre del archivo `.scss` a compilar | `style('main.scss')` |
+| **module** | Se usa para linkear los archivos `.js` que serán compilados. | - `fileJs`: _(string)_ nombre del archivo `.js` a compilar | `module('main.js')` |
+| **page** | Se usa para linkear páginas `.twig` hermanas. | - `namePage`: _(string)_ nombre de la página sin la extensión <br> - `optionsURL`: _(string)_ _(optional)_ información adicional como `#hash` o `?parameters` | - `page('nosotros')` <br> - `page('nostros', '#historia')` <br> - `page('nosotros', '/?lang=en')`|
+| **isDev** | _(Adicional)_ Está funcion retorna un `boolean` y es útil si se desea saber si la maqueta está en desarrollo. | - | `isDev()` |
+| **isBuild** | _(Adicional)_ Está funcion retorna un `boolean` y es útil si se desea saber si la maqueta está en producción. | - | `isBuild()` |

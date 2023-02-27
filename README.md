@@ -178,7 +178,7 @@ src
 - `styles`: Esta es la carpeta principal ya que todos los archivos que se encuentren dentro de ella serán los que se compilan.
 
 ### SASS functions
-Se encuentran `functions` previamente echas y tienen funcionalidades extras para contruir los estilos de la maqueta de una mejor manera.
+Se encuentran `functions` previamente echos y tienen funcionalidades extras para contruir los estilos de la maqueta de una mejor manera.
 
 | Function | Descripción | Parámetros | Ejemplo |
 | ----- | ----------- | ---------- | ------- |

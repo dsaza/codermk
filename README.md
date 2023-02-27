@@ -5,10 +5,11 @@
   <i>Un workflow ideal para maquetar.</i>
 </div>
 
-## Índice
+### 📋 Índice
 
-- Data
-  - [¿Cómo usar y para que sirve?](#cómo-usar-y-para-que-sirve)
+- [Data](#data)
+  - [¿Cómo usar?](#cómo-usar)
+  - [Estructura de archivos JSON](#estructura-de-archivos-json)
 
 - Motor de plantillas
   - [¿Qué es Nunjucks?](#qué-es-nunjucks)
@@ -30,3 +31,9 @@
  
 - Font icons
   - [¿Cómo usar iconos SVG?](#cómo-usar-iconos-svg)
+
+## 📀 Data
+Para que el uso de información general sea más óptima de utilizar se plantea el uso de archivos JSON que contengan los datos relevantes. El motor de plantillas HTML y javascript tendrán acceso a la información de los JSON mediante constantes.
+
+### ¿Cómo usar?
+Lorem

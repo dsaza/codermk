@@ -53,7 +53,7 @@ La colección `site.json` contiene una propiedad `title` la cual corresponde al 
 **[⬆ Volver al índice](#-índice)**
 
 ## 🛵 Motor de plantillas
-Al reutilizar HTML en el momento de maquetar se presentan varios problemas, así que `Nunjucks` ayudará a realizar esa tarea.
+Al reutilizar HTML en el momento de maquetar se presentan varios problemas, así que `Nunjucks` ayudará a realizar esta tarea.
 
 ### ¿Qué es Nunjucks?
 Es un motor de plantillas rico y potente para JavaScript muy inspirado en [jinja2](https://jinja.palletsprojects.com/en/3.1.x/) (Motor de plantillas para [Django](https://www.djangoproject.com/)). Permite características como autoescapado, herencia de bloques, macros, control asíncrono y muchos más.  

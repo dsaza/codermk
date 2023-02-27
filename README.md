@@ -25,6 +25,7 @@
 - [Preprocesador CSS](#-preprocesador-css)
   - [¿Qué es SASS?](#qué-es-sass)
   - [Estructura de archivos SCSS](#estructura-de-archivos-scss)
+  - [SASS functions](#sass-functions)
   - [SASS mixins](#sass-mixins)
 
 - ESCMAScript
@@ -161,7 +162,7 @@ src
 |   ├── config
 |   ├── core
 |   ├── extends
-|   ├── fonts
+|   ├── fontshttps://github.com/sindresorhus/modern-normalize
 |   ├── functions
 |   ├── mixins
 |   └── styles
@@ -169,7 +170,25 @@ src
 
 - `components`: aquí se ubicarán los estilos para los componentes.
 - `config`: aquí se ubicarán las variables que utilizará el proyecto.
-- `core`: contiene los archivos que aplican estilos globales al proyecto, por defecto ya contiene un formateador de estilos, que es el mismo que utiliza [TailwindCSS](https://tailwindcss.com/)
-- `extends`: [Documentación](https://sass-lang.com/documentation/at-rules/extend)
+- `core`: contiene los archivos que aplican estilos globales a la maqueta, por defecto ya contiene un [formateador de estilos](https://github.com/sindresorhus/modern-normalize), que es el mismo que utiliza [TailwindCSS](https://tailwindcss.com/).
+- `extends`: [Ver documentación](https://sass-lang.com/documentation/at-rules/extend).
 - `fonts`: Aquí se guardan todas las importaciones de fuentes que necesite la maqueta.
-- `functions`: [Documentación](https://sass-lang.com/documentation/at-rules/function)
+- `functions`: [Ver documentación](https://sass-lang.com/documentation/at-rules/function).
+- `mixins`: [Ver documentación](https://sass-lang.com/documentation/at-rules/mixin).
+- `styles`: Esta es la carpeta principal ya que todos los archivos que se encuentren dentro de ella serán los que se compilan.
+
+### SASS functions
+Se encuentran `functions` previamente echas y tienen funcionalidades extras para contruir los estilos de la maqueta de una mejor manera.
+
+| Function | Descripción | Parámetros | Ejemplo |
+| ----- | ----------- | ---------- | ------- |
+| **public_url** | Reemplazará la función `url` de CSS y está hará referencia a los archivos ubicados en la carpeta `public`. | - `linkFromPublic`: _(string)_ ruta del archivo tomando como raíz la carpeta `public` | `public_url(favicon.ico)` |
+| **rempi** | Se usa para usar formato `rem` como si fueran `px`. | - `sizePx`: _(number)_ valor de píxeles a utilizar | `rempi(20) // 20px` |
+
+### SASS mixins
+Se encuentran `mixins` previamente construidos y tienen funcionalidades extras para ahorrar tiempo en el momento de contruir los estilos.
+
+| Mixin | Descripción | Parámetros | Ejemplo |
+| ----- | ----------- | ---------- | ------- |
+| **icon** | Retorna las propiedades requeridas para utilizar un `icon-font` desde los pseudo elementos `after` o `before`. | - `idIcon`: _(number)_ id del icono el cual corresponde al número que se le otorgó en el momento de crear el archivo SVG | `@include icon(0) // [00]code-labs.svg` |
+

@@ -182,7 +182,7 @@ Se encuentran `functions` previamente hechos y tienen funcionalidades extras par
 
 | Function | Descripción | Parámetros | Ejemplo |
 | ----- | ----------- | ---------- | ------- |
-| **public_url** | Reemplazará la función `url` de CSS y está hará referencia a los archivos ubicados en la carpeta `public`. | - `linkFromPublic`: _(string)_ ruta del archivo tomando como raíz la carpeta `public` | `public_url(favicon.ico)` |
+| **public_url** | Reemplazará la función `url` de CSS y esta hará referencia a los archivos ubicados en la carpeta `public`. | - `linkFromPublic`: _(string)_ ruta del archivo tomando como raíz la carpeta `public` | `public_url(favicon.ico)` |
 | **rempi** | Se usa para usar formato `rem` como si fueran `px`. | - `sizePx`: _(number)_ valor de píxeles a utilizar | `rempi(20) // 20px` |
 
 ### SASS mixins
@@ -190,10 +190,10 @@ Se encuentran `mixins` previamente construidos y tienen funcionalidades extras p
 
 | Mixin | Descripción | Parámetros | Ejemplo |
 | ----- | ----------- | ---------- | ------- |
-| **icon** | Retorna las propiedades requeridas para utilizar un `icon-font` desde los pseudo elementos `after` o `before`. | - `idIcon`: _(number)_ id del icono el cual corresponde al número que se le otorgó en el momento de crear el archivo SVG | `@include icon(0) // [00]code-labs.svg` |
+| **icon** | Retorna las propiedades requeridas para utilizar un `icon-font` desde los pseudo-elementos `after` o `before`. | - `idIcon`: _(number)_ id del icono el cual corresponde al número que se le otorgó en el momento de crear el archivo SVG | `@include icon(0) // [00]code-labs.svg` |
 | **scrollbar** | Customiza el scrollbar de la página o un contenedor. | - `colorBar`: CSS Color <br> - `colorBackground`: CSS Color <br> - `size`: _(number)_ CSS Size in pixels | `@include scrollbar(red, white, 10)` |
 
-Además de estos existen `mixins` los cuales facilitan el uso de los `media queries`, esos son:
+Existen más `mixins` que facilitan el uso de los `media queries`, estos son:
 
 - Ideal para construir css a partir de `first mobile`. Recibe como parámetro un valor en píxeles.
 ```scss

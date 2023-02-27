@@ -39,7 +39,7 @@ Para que el uso de información general sea más óptima de utilizar se plantea 
 Cada archivo JSON hará la función de coleccionar los datos, tal como lo hace una tabla en SQL.
 
 ### Estructura de archivos JSON
-Los archivos JSON serán creados dentro de la carpeta `./data`.
+Los archivos JSON serán creados dentro de la carpeta `data`.
 
 Por defecto ya existe una colección creada llamada `site.json`.
 
@@ -48,8 +48,29 @@ data
 | site.json
 ```
 
-La colección `site.json` contiene una propiedad llamada `title` la cual corresponde al título de la página HTML del sitio a maquetar.
+La colección `site.json` contiene una propiedad `title` la cual corresponde al título de la página HTML del sitio a maquetar.
 
 **[⬆ Volver al índice](#-índice)**
 
 ## 🛵 Motor de plantillas
+Al reutilizar HTML en el momento de maquetar se presentan varios problemas, así que `Nunjucks` ayudará a realizar esa tarea.
+
+### ¿Qué es Nunjucks?
+Es un motor de plantillas rico y potente para JavaScript muy inspirado en [jinja2](https://jinja.palletsprojects.com/en/3.1.x/) (Motor de plantillas para [Django](https://www.djangoproject.com/)). Permite características como autoescapado, herencia de bloques, macros, control asíncrono y muchos más.  
+
+Se recomienda leer la documentación de Nunjucks [aquí](https://mozilla.github.io/nunjucks/templating.html#variables).
+
+### ¿Qué extensión de archivos utilizar?
+Nunjucks es muy inspirado en [jinja2](https://jinja.palletsprojects.com/en/3.1.x/) pero también tiene una gran similitud con un motor de plantillas para PHP llamado [Twig](https://twig.symfony.com/). Cómo la gran mayoría de editores de código desconocen la estensión `.njk` se recomienda utilizar la extensión `.twig` para todos los archivos que se creen.
+
+### ¿Qué extensión de Visual Studio Code instalar?
+Se recomienda instalar la extensión [Twig Language](https://marketplace.visualstudio.com/items?itemName=mblode.twig-language) del autor _[mblode](https://marketplace.visualstudio.com/publishers/mblode)_. Esta extensión dará soporte para la sintaxix y varios snippets.
+
+### Constantes Nunjucks
+Como se mencionó anteriormente, las colecciones JSON de la carpeta `data` podrán ser usadas en el motor de plantillas, para ello existe una constante `__mkdata` la cual es un objeto que contiene cada colección JSON como propiedad. Por ejemplo, si se desea utilizar la propiedad `title` de la colección `site.json` se puede acceder mediante `__mkdata.site.title`.
+
+### Nunjucks mixins
+La manera en que se linkean los assets como imágenes, archivos css, archivos js, páginas HTML locales y demás; se debé hacer mediante mixins ya construidos para su uso. A continuación se listan dichos mixins:
+
+- **public**: Se usa para linkear archivos que se encuentren dentro de la carpeta `public`, recibe como parámetro un `string` que será la ruta del archivo tomando como raíz la carpeta `public`. Por ejemplo, `public('favicon.ico')`.
+- **style**: Se usa para linkear los archivos `.scss` que serán compilados, recibe como parámetro un `string` que será el nombre del archivo a compilar. Por ejemplo `style('main.scss')`.

@@ -191,36 +191,41 @@ Se encuentran `mixins` previamente construidos y tienen funcionalidades extras p
 | Mixin | Descripción | Parámetros | Ejemplo |
 | ----- | ----------- | ---------- | ------- |
 | **icon** | Retorna las propiedades requeridas para utilizar un `icon-font` desde los pseudo-elementos `after` o `before`. | - `idIcon`: _(number)_ id del icono el cual corresponde al número que se le otorgó en el momento de crear el archivo SVG | `@include icon(0) // [00]code-labs.svg` |
-| **scrollbar** | Customiza el scrollbar de la página o un contenedor. | - `colorBar`: CSS Color <br> - `colorBackground`: CSS Color <br> - `size`: _(number)_ CSS Size in pixels | `@include scrollbar(red, white, 10)` |
+| **scrollbar** | Customiza el scrollbar de la página o de un contenedor. | - `colorBar`: CSS Color <br> - `colorBackground`: CSS Color <br> - `size`: _(number)_ CSS Size in pixels | `@include scrollbar(red, white, 10)` |
 
 Existen más `mixins` que facilitan el uso de los `media queries`, estos son:
 
-- Ideal para construir css a partir de `first mobile`. Recibe como parámetro un valor en píxeles.
 ```scss
 @mixin media-min-width($width)...
 ```
-
-- Ideal para construir css a partir de `first desktop`. Recibe como parámetro un valor en píxeles.
+> Ideal para construir css a partir de `first mobile`. Recibe como parámetro un valor en píxeles.
+<br>
+ 
 ```scss
 @mixin media-max-width($width)...
 ```
+> Ideal para construir css a partir de `first desktop`. Recibe como parámetro un valor en píxeles.
+<br>
 
-- Poco usual pero se recomienda usar cuando el css depende de la altura del disposito, de menor a mayor.
 ```scss
 @mixin media-min-height($height)...
 ```
+> Poco usual pero se recomienda usar cuando el css depende de la altura del disposito, de menor a mayor.
+<br>
 
-- Poco usual pero se recomienda usar cuando el css depende de la altura del disposito, de mayor a menor.
 ```scss
 @mixin media-max-height($height)...
 ```
+> Poco usual pero se recomienda usar cuando el css depende de la altura del disposito, de mayor a menor.
+<br>
 
 Ejemplo:
 ```scss
 @include media-min-width(1800px); // @media (min-width: 1800px)...
 ```
+<br>
 
-Además de los `mixins` ya mencionados también existen otros que se basan a partir de unos breakpoints estándares:
+Además de los `mixins` ya mencionados también existen otros que funcionan a partir de breakpoints estándar:
 ```scss
 $breaks: (
 	xs: 0px,
@@ -231,8 +236,9 @@ $breaks: (
 	xxl: 1400px,
 );
 ```
+<br>
 
-- Son dos `mixins`, uno para `first mobile` y otro para `first desktop`:
+> Son dos `mixins`, uno para `first mobile` y otro para `first desktop`:
 ```scss
 @mixin media-break-up($break)... // first mobile
 ```
@@ -240,7 +246,7 @@ $breaks: (
 @mixin media-break-down($break)... // first desktop
 ```
 
-Ejemplo:
+Ejemplos:
 ```scss
 @include media-break-up(md); // @media (min-width: 768px)
 ```

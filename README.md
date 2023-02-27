@@ -79,7 +79,7 @@ src
 Todo lo relacionado a `Nunjucks` estará ubicado en la carpeta `src/views` y se distribuirá de la siguiente manera:
 
 - `components`: aquí se ubicarán los macros o componentes dinámicos de la maqueta.
-- `layouts`: aquí se ubicarán los esqueletos de la maqueta que se heredarán las páginas.
+- `layouts`: aquí se ubicarán los esqueletos de la maqueta que heredarán las páginas.
 - `pages`: esta es la carpeta principal ya que los archivos que se encuentren allí serán los compilados como HTML y los que conformarán la maqueta.
 - `partials`: aquí se guardarán trozos de código HTML los cuales pueden ser reutilizados en cualquier parte.
 

@@ -22,7 +22,8 @@ function transfromScripts(files = [], data) {
 			sourcemap: mode === Mode.dev,
 			target: ['es2020', 'chrome58', 'firefox57', 'safari11'],
 			define: {
-				__mkdata: JSON.stringify(dataJson)
+				__mkdata: JSON.stringify(dataJson),
+				__mode: Mode.dev ? 'development' : 'production'
 			}
 		})
 	

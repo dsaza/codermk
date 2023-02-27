@@ -21,7 +21,7 @@ export function getEnvGlobals(data = []) {
 		 * @returns Mode
 		 */
 		isDev: () => mode === Mode.dev,
-		isBuild: () => mode === Mode.build,
+		isProduction: () => mode === Mode.build,
 
 		/**
 		 * Function to set a public path

@@ -318,7 +318,7 @@ Estas constantes son:
 - `__mode`: Es un string que tendrá dos valores, `production` ó `development`.
 
 ## 🥳 Font icons
-Usar iconos SVG es un reto al momento de maquetar, `Codermk` utiliza el paquete [Fantasticon](https://www.npmjs.com/package/fantasticon) el cual permite convertir SVG o fuentes y también genera un CSS que contendrá la clase de cada icono.
+Usar iconos SVG es un reto al momento de maquetar, `Codermk` utiliza el paquete [Fantasticon](https://www.npmjs.com/package/fantasticon) el cual permite generar archivos de fuentes y el css correspondiente a partir de iconos SVG.
 
 ### Estructura de iconos
 ```
@@ -329,12 +329,23 @@ src
 
 Todos los iconos tienen que estar dentro de la carpeta `src/icons` y tienen una nomenclatura especial.
 
-- Deben tener un `ID` incremental, este empieza en `00`, el siguiente será `01`, esto hasta un máximo de `99`, el `ID` debe estar dentro de dos corchetes `[]` y se escriben al principio del nombre del archivo.
+- Deben tener un `ID` incremental, este empieza en `00`, por ende el siguiente será `01`, esto hasta un máximo de `99`, el `ID` debe estar dentro de dos corchetes `[]` y se escriben al principio del nombre del archivo.
 - Seguido del `ID` y sin espacios debe ir el nombre del icono, este debe ser único y jamás repetirse, también debe ser escrito en minúsculas y los espacios se harán con un guión `-`. Por ejemplo, `[01]arrow-right.svg`.
 
 ### ¿Cómo usar iconos SVG?
-Si se usa como clase dentro del HTML, la clase tendrá siempre un prefijo `ci--` y en seguida de esto escribir el nombre del icono; se recomienda usar la etiqueta `span` para insertar un icono. Por ejemplo:
+Si se usa como clase dentro del HTML, la clase tendrá siempre el prefijo `ci--` y en seguida escribir el nombre del icono; se recomienda usar la etiqueta `span` para insertar un icono. Por ejemplo:
 
 ```html
 <span class="ci--code-labs"></span>
+```
+
+Si se usa como estilo CSS, cada icono solo se puede utilizar en pseudo-elementos, ya sea `::before` o `::after`. Para esto hay un mixin llamado `icon` el cual recibe el ID del icono en formato `number`, es decir, si el `ID` es `[05]`, se envía `5`. Por ejemplo:
+
+```scss
+.List-item {
+  // ...
+  &::before {
+    @include icon(0); // [00]code-labs.svg
+  }
+}
 ```

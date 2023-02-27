@@ -7,6 +7,9 @@
 
 ### 📋 Índice
 
+- [Instalación](#-instalación)
+- [Desarrollo](#-desarrollo)
+- [Compilación](#-compilación)
 - [Data](#-data)
   - [¿Cómo usar?](#cómo-usar)
   - [Estructura de archivos JSON](#estructura-de-archivos-json)
@@ -31,6 +34,46 @@
  
 - Font icons
   - [¿Cómo usar iconos SVG?](#cómo-usar-iconos-svg)
+
+<br>
+
+## 🧰 Instalación
+- Ejecutar el comando.
+
+```sh
+npm create coder-front-app@latest
+```
+
+- Escribir el nombre del proyecto.
+- Seleccionar la opción `Codermk`.
+- Instalar dependencias.
+
+```sh
+cd name-project
+npm install
+```
+
+**[⬆ Volver al índice](#-índice)**
+
+## 💻 Desarrollo
+- Ejecutar el comando:
+
+```sh
+npm run dev
+```
+
+**[⬆ Volver al índice](#-índice)**
+
+## 🪅 Compilación
+- Ejecutar el comando:
+
+```sh
+npm run build
+```
+
+La maqueta final será guardada en la carpeta `dist`, es posible cambiar el nombre de la carpeta en el archivo `codermk.json`.
+
+**[⬆ Volver al índice](#-índice)**
 
 ## 📀 Data
 Para que el uso de información general sea más óptima de utilizar se plantea el uso de archivos JSON que contengan los datos relevantes. El motor de plantillas HTML y javascript tendrán acceso a la información de los JSON mediante constantes.

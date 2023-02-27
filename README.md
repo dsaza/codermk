@@ -24,7 +24,7 @@
 
 - [Preprocesador CSS](#-preprocesador-css)
   - [¿Qué es SASS?](#qué-es-sass)
-  - [Metodología recomendada (SUIT CSS)](#metodología-recomendada-suitcss)
+  - [Metodología recomendada (SuitCSS)](#metodología-recomendada-suitcss)
   - [Estructura de archivos SCSS](#estructura-de-archivos-scss)
   - [SASS functions](#sass-functions)
   - [SASS mixins](#sass-mixins)
@@ -148,15 +148,39 @@ La manera en que se linkean los assets como imágenes, archivos css, archivos js
 ## 💅 Preprocesador CSS
 Las hojas de estilo de un sitio web cada vez son más complejas y difíciles de mantener. En este punto es dónde un preprocesador de CSS puede ser de gran utilidad y SASS permite emplear funcionalidades que no existen en CSS.
 
-## ¿Qué es SASS?
+### ¿Qué es SASS?
 SASS es un preprocesador de CSS compatible con todas sus versiones. Por lo tanto, se trata de una herramienta utilizada por los desarrolladores web para traducir un código de hojas de estilo no estándar a un código CSS estándar, legible por la mayoría de los navegadores. La principal utilidad de SASS es la de hacer más simple la escritura del código CSS, además de brindar diversas utilidades que a día de hoy el CSS no puede ofrecer.
 
 Se recomienda ver su documentación [aquí](https://sass-lang.com/guide).
 
-## Metodología recomendada (SuitCSS)
+### Metodología recomendada (SuitCSS)
+SUIT comprende Utilidades y Componentes. Dentro de los componentes puede haber modificadores, descendientes y estados.  
 
+SUIT utiliza una combinación de la notación de Pascal (PascalCase), Mayúsculas y minúsculas(camelCase) y guiones. Sus convenciones imponen un límite en el número a veces confuso de guiones y guiones bajos que pueden aparecer en BEM. Por ejemplo, la clase BEM `.search-form__text-field` sería `.SearchForm-textField` en SUIT.  
 
-## Estructura de archivos SCSS
+#### - Utilidades
+Las utilidades manejan la estructura y el estilo posicional, y están escritas de tal manera que se pueden aplicar en cualquier parte de un componente. Tienen el prefijo `u-` y están escritos en mayúsculas y minúsculas. Por ejemplo `.u-clearFix`, `.u-textCenter` y `.u-displayNone`.
+
+#### - Componentes
+Un componente en SUIT ocupa el lugar de un bloque en BEM. Los componentes siempre están escritos en mayúsculas y minúsculas y son solo una parte de SUIT que usa mayúsculas y minúsculas, lo que los hace fáciles de identificar. Por ejemplo, `.SearchForm`.
+
+#### - Espacio de nombres de componentes
+Opcionalmente, los componentes pueden tener un prefijo con un espacio de nombres y un solo guión `nmsp-` para garantizar que se eviten conflictos, por ejemplo `.nmsp-SearchForm`.
+
+#### - Descendientes
+Un descendiente en SUIT reemplaza un elemento en BEM. Utiliza un solo guión `-` y está escrito en mayúsculas y minúsculas. Por ejemplo `.SearchForm-header`, `.SearchForm-textField` y `.SearchForm-submitButton`.
+
+#### - Modificadores
+SUIT usa modificadores al igual que BEM, sin embargo, su función está más estrictamente controlada. Un modificador SUIT generalmente solo se aplica directamente a un componente, no a un descendiente. Tampoco debe usarse para representar cambios de estado, ya que SUIT tiene una convención de nomenclatura dedicada para los estados.
+
+Los modificadores están escritos en mayúsculas y minúsculas y están precedidos por dos guiones `--`. Por ejemplo `.SearchForm--advanced` y `.SearchForm--required`.
+
+#### - Estado
+Las clases de estado se pueden usar para reflejar los cambios en el estado de un componente. Esto les permite diferenciarse claramente de los modificadores, que reflejan la modificación de la apariencia base de un componente independientemente del estado. Si es necesario, también se puede aplicar un estado a un descendiente.
+
+Los estados tienen el prefijo `is-` y están escritos en mayúsculas y minúsculas. También siempre se escriben como clases contiguas. Por ejemplo `.SearchForm.is-invalid`.
+
+### Estructura de archivos SCSS
 SASS permite crear dos tipos de extensiones para sus archivos: `.sass` y `.scss`. La estructura de archivos en este caso será con la extensión `.scss`. Todo lo relacionado a `SASS` estará ubicado en la carpeta `src/theme`.
 
 ```

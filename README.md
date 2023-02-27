@@ -72,6 +72,9 @@ Como se mencionó anteriormente, las colecciones JSON de la carpeta `data` podr�
 ### Nunjucks mixins
 La manera en que se linkean los assets como imágenes, archivos css, archivos js, páginas HTML locales y demás; se debé hacer mediante mixins ya construidos para su uso. A continuación se listan dichos mixins:
 
+| Mixin | Descripción | Parámetros | Ejemplo |
+| ----- | ----------- | ---------- | ------- |
+| public | 
 - **public**: Se usa para linkear archivos que se encuentren dentro de la carpeta `public`, recibe como parámetro un `string` que será la ruta del archivo tomando como raíz la carpeta `public`. Por ejemplo, `public('favicon.ico')`.
 - **style**: Se usa para linkear los archivos `.scss` que serán compilados, recibe como parámetro un `string` que será el nombre del archivo a compilar. Por ejemplo `style('main.scss')`.
 - **module**: Se usar para linker los arvhios `.js` que serán compilados, recibe como parámetro un `string` que será el nombre del archivo a compilar. Por ejemplo `module('main.js')`.

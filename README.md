@@ -24,7 +24,7 @@
 
 - [Preprocesador CSS](#-preprocesador-css)
   - [¿Qué es SASS?](#qué-es-sass)
-  - [Metodología recomendada (SUIT CSS)](#metodología-recomendada-suit-css)
+  - [Metodología recomendada (SUIT CSS)](#metodología-recomendada-suitcss)
   - [Estructura de archivos SCSS](#estructura-de-archivos-scss)
   - [SASS functions](#sass-functions)
   - [SASS mixins](#sass-mixins)
@@ -153,7 +153,7 @@ SASS es un preprocesador de CSS compatible con todas sus versiones. Por lo tanto
 
 Se recomienda ver su documentación [aquí](https://sass-lang.com/guide).
 
-## Metodología recomendada (SUIT CSS)
+## Metodología recomendada (SuitCSS)
 
 
 ## Estructura de archivos SCSS

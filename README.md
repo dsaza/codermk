@@ -74,7 +74,7 @@ La manera en que se linkean los assets como imágenes, archivos css, archivos js
 
 | Mixin | Descripción | Parámetros | Ejemplo |
 | ----- | ----------- | ---------- | ------- |
-| public | 
+| **public** | Se usa para linkear archivos que se encuentren dentro de la carpeta `public` | `linkFromPublic` ruta del archivo tomando como raíz la carpeta `public` | `public('favicon.ico')` | 
 - **public**: Se usa para linkear archivos que se encuentren dentro de la carpeta `public`, recibe como parámetro un `string` que será la ruta del archivo tomando como raíz la carpeta `public`. Por ejemplo, `public('favicon.ico')`.
 - **style**: Se usa para linkear los archivos `.scss` que serán compilados, recibe como parámetro un `string` que será el nombre del archivo a compilar. Por ejemplo `style('main.scss')`.
 - **module**: Se usar para linker los arvhios `.js` que serán compilados, recibe como parámetro un `string` que será el nombre del archivo a compilar. Por ejemplo `module('main.js')`.

@@ -43,13 +43,13 @@ Los archivos JSON serán creados dentro de la carpeta `./data`.
 
 Por defecto ya existe una colección creada llamada `site.json`.
 
-**[⬆ Volver a índice](#-índice)**
-
 ```
 data  
 | site.json
 ```
 
 La colección `site.json` contiene una propiedad llamada `title` la cual corresponde al título de la página HTML del sitio a maquetar.
+
+**[⬆ Volver a índice](#-índice)**
 
 ## Motor de plantillas

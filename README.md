@@ -320,7 +320,7 @@ Estas constantes son:
 ## 🥳 Font icons
 Usar iconos SVG es un reto al momento de maquetar, `Codermk` utiliza el paquete [Fantasticon](https://www.npmjs.com/package/fantasticon) el cual permite convertir SVG o fuentes y también genera un CSS que contendrá la clase de cada icono.
 
-### [Estructura de iconos]
+### Estructura de iconos
 ```
 src
 └── icons

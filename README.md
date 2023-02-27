@@ -16,12 +16,12 @@
   - [¿Qué extensión de Visual Studio Code instalar?](#qué-extensión-de-visual-studio-code-instalar)
   - [Estructura de archivos](#estructura-de-archivos)
   - [Constantes Nunjucks](#constantes-nunjucks)
-  - [Nunjucks Mixins](#nunjucks-mixins)
+  - [Nunjucks mixins](#nunjucks-mixins)
 
 - Preprocesador CSS
   - [¿Qué es SASS?](#qué-es-sass)
   - [Estructura de archivos SCSS](#estructura-de-archivos-scss)
-  - [Mixins SASS](#mixins-sass)
+  - [SASS mixins](#sass-mixins)
 
 - ESCMAScript
   - [¿Qúe es Esbuild?](#qué-es-esbuild)

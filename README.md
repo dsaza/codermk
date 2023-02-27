@@ -258,12 +258,12 @@ Ejemplo:
 Además de los `mixins` ya mencionados también existen otros que funcionan a partir de breakpoints estándar:
 ```scss
 $breaks: (
-	xs: 0px,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	xxl: 1400px,
+  xs: 0px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
 );
 ```
 <br>

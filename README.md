@@ -1,7 +1,6 @@
 <div align='center'>
   <img height="60" src="https://raw.githubusercontent.com/dsaza/codermk/main/code-labs.svg">
   <h1>Codermk</h1>
-
   <i>Un workflow ideal para maquetar.</i>
 </div>
 
@@ -357,4 +356,6 @@ Si se usa como estilo CSS, cada icono solo se puede utilizar en pseudo-elementos
 
 **[⬆ Volver al índice](#-índice)**
 
-<br>
+---
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

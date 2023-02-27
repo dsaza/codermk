@@ -220,7 +220,7 @@ Se encuentran `mixins` previamente construidos y tienen funcionalidades extras p
 
 | Mixin | Descripción | Parámetros | Ejemplo |
 | ----- | ----------- | ---------- | ------- |
-| **icon** | Retorna las propiedades requeridas para utilizar un `icon-font` desde los pseudo-elementos `after` o `before`. | - `idIcon`: _(number)_ id del icono el cual corresponde al número que se le otorgó en el momento de crear el archivo SVG | `@include icon(0) // [00]code-labs.svg` |
+| **icon** | Retorna las propiedades requeridas para utilizar un `icon-font` desde los pseudo-elementos `::after` o `::before`. | - `idIcon`: _(number)_ id del icono el cual corresponde al número que se le otorgó en el momento de crear el archivo SVG | `@include icon(0) // [00]code-labs.svg` |
 | **scrollbar** | Customiza el scrollbar de la página o de un contenedor. | - `colorBar`: CSS Color <br> - `colorBackground`: CSS Color <br> - `size`: _(number)_ CSS Size in pixels | `@include scrollbar(red, white, 10)` |
 
 Existen más `mixins` que facilitan el uso de los `media queries`, estos son:
@@ -337,6 +337,7 @@ Si se usa como clase dentro del HTML, la clase tendrá siempre el prefijo `ci--`
 
 ```html
 <span class="ci--code-labs"></span>
+<!-- [00]code-labs.svg -->
 ```
 
 Si se usa como estilo CSS, cada icono solo se puede utilizar en pseudo-elementos, ya sea `::before` o `::after`. Para esto hay un mixin llamado `icon` el cual recibe el ID del icono en formato `number`, es decir, si el `ID` es `[05]`, se envía `5`. Por ejemplo:

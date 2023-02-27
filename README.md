@@ -11,7 +11,7 @@
   - [¿Cómo usar?](#cómo-usar)
   - [Estructura de archivos JSON](#estructura-de-archivos-json)
 
-- Motor de plantillas
+- [Motor de plantillas](#-motor-de-plantillas)
   - [¿Qué es Nunjucks?](#qué-es-nunjucks)
   - [¿Qué extensión de archivos utilizar?](#qué-extensión-de-archivos-utilizar)
   - [¿Qué extensión de Visual Studio Code instalar?](#qué-extensión-de-visual-studio-code-instalar)
@@ -50,6 +50,6 @@ data
 
 La colección `site.json` contiene una propiedad llamada `title` la cual corresponde al título de la página HTML del sitio a maquetar.
 
-**[⬆ Volver a índice](#-índice)**
+**[⬆ Volver al índice](#-índice)**
 
-## Motor de plantillas
+## 🛵 Motor de plantillas

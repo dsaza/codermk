@@ -211,7 +211,7 @@ Se encuentran `functions` previamente hechos y tienen funcionalidades extras par
 
 | Function | Descripción | Parámetros | Ejemplo |
 | ----- | ----------- | ---------- | ------- |
-| **public_url** | Reemplazará la función `url` de CSS y esta hará referencia a los archivos ubicados en la carpeta `public`. | - `linkFromPublic`: _(string)_ ruta del archivo tomando como raíz la carpeta `public` | `public_url(favicon.ico)` |
+| **public_url** | Reemplazará la función `url` de CSS y esta hará referencia a los archivos ubicados en la carpeta `public`. | - `linkFromPublic`: _(string)_ ruta del archivo tomando como raíz la carpeta `public` | `public_url('favicon.ico')` |
 | **rempi** | Se usa para usar formato `rem` como si fuera `px`. | - `sizePx`: _(number)_ valor de píxeles a utilizar | `rempi(20) // 20px` |
 
 ### SASS mixins

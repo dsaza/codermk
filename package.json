@@ -39,6 +39,7 @@
 		"nunjucks": "3.2.3",
 		"picocolors": "1.0.0",
 		"postcss": "8.4.20",
+		"postcss-import": "15.1.0",
 		"pretty": "2.0.0",
 		"sass": "1.57.1",
 		"terser": "5.16.1"

@@ -335,6 +335,11 @@ Todos los iconos tienen que estar dentro de la carpeta `src/icons` y tienen una 
 - Deben tener un `ID` incremental, este empieza en `00`, por ende el siguiente será `01`, esto hasta un máximo de `99`, el `ID` debe estar dentro de dos corchetes `[]` y se escriben al principio del nombre del archivo.
 - Seguido del `ID` y sin espacios debe ir el nombre del icono, este debe ser único y jamás repetirse, también debe ser escrito en minúsculas y los espacios se harán con un guión `-`. Por ejemplo, `[01]arrow-right.svg`.
 
+Al agregar un nuevo icono se tiene que ejecutar el siguiente comando:
+```sh
+npm run icons
+```
+
 ### ¿Cómo usar iconos SVG?
 Si se usa como clase dentro del HTML, la clase tendrá siempre el prefijo `ci--` y en seguida escribir el nombre del icono; se recomienda usar la etiqueta `span` para insertar un icono. Por ejemplo:
 

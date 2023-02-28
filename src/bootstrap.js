@@ -33,7 +33,7 @@ export default async function bootstrap(mode = '', config = {}) {
 
 	if (mode === Mode.build) {
 		series(Cleaner)
-		await seriesAsync(Views, Scripts, Styles, ViewsPretty, ScriptsMinify, StylesFull, Assets)
+		await seriesAsync(Assets, Views, Scripts, Styles, ViewsPretty, ScriptsMinify, StylesFull, Assets)
 		series(CleanerFinal)
 	}
 }

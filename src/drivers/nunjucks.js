@@ -51,7 +51,7 @@ function renderFile(file = '') {
 			filename = path.basename(file).replace('.twig', '.html')
 
 			if (Mode.dev === mode) fs.writeFileSync(path.join(config.tmpDir, `./${filename}`), res)
-			if (Mode.build === mode) fs.writeFileSync(path.join(config.outDir, `./__templates/${filename}`), res)
+			if (Mode.build === mode) fs.writeFileSync(path.join(config.outDir, `./assets/__templates/${filename}`), res)
 			
 			resolve(true)
 		})

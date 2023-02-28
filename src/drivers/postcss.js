@@ -9,7 +9,7 @@ import { getFiles } from '../utils/globs.js'
 
 export async function applyPostcss() {
 	const { config } = useConfig()
-	const files = await getFiles(`./${config.buildPath}/__compiled/*.css`)
+	const files = await getFiles(`./${config.buildPath}/assets/__compiled/*.css`)
 	const plugins = [
 		atImport(),
 		autoprefixer({

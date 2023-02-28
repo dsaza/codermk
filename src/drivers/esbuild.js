@@ -11,7 +11,7 @@ function transfromScripts(files = [], data) {
 	const { mode } = useMode()
 
 	let dataJson = arrayJsonFilesToObject(data)
-	let outDir = Mode.build === mode ? path.join(config.outDir, './__compiled') : path.join(config.tmpDir, './__compiled')
+	let outDir = Mode.build === mode ? path.join(config.outDir, './assets/__compiled') : path.join(config.tmpDir, './__compiled')
 
 	try {
 		esbuild.buildSync({

@@ -37,7 +37,7 @@ function compileFiles(files = []) {
 			})
 
 			let filename = path.basename(file).replace('.scss', '.css')
-			let pathResult = `./__compiled/${filename}`
+			let pathResult = Mode.build === mode ? `./assets/__compiled/${filename}`  : `./__compiled/${filename}`
 			let pathResultMapping = `./__compiled/${filename}.map`
 			
 			if (Mode.dev === mode) {

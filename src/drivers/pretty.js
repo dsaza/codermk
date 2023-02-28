@@ -6,7 +6,7 @@ import { useConfig } from '../hooks/all.js'
 
 export async function prettyHTML() {
 	const { config } = useConfig()
-	const files = await getFiles(`./${config.buildPath}/__templates/*.html`)
+	const files = await getFiles(`./${config.buildPath}/assets/__templates/*.html`)
 	
 	files.forEach(file => {
 		let content = fs.readFileSync(file, 'utf8')

@@ -6,7 +6,7 @@ import { getFiles } from '../utils/globs.js'
 
 export async function compressScripts() {
 	const { config } = useConfig()
-	const files = await getFiles(`./${config.buildPath}/__compiled/*.js`)
+	const files = await getFiles(`./${config.buildPath}/assets/__compiled/*.js`)
 	
 	for (const file of files) {
 		let content = fs.readFileSync(file, 'utf8')

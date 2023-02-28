@@ -26,7 +26,7 @@ export default function Cleaner() {
 		fs.mkdirSync(path.join(config.outDir, './assets'))
 		fs.mkdirSync(path.join(config.outDir, './assets/css'))
 		fs.mkdirSync(path.join(config.outDir, './assets/js'))
-		fs.mkdirSync(path.join(config.outDir, './__compiled'))
-		fs.mkdirSync(path.join(config.outDir, './__templates'))
+		fs.mkdirSync(path.join(config.outDir, './assets/__compiled'))
+		fs.mkdirSync(path.join(config.outDir, './assets/__templates'))
 	}
 }

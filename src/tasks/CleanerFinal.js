@@ -11,8 +11,8 @@ export default function CleanerFinal() {
 
 	clogWorking(Tasks.cleanerFinal)
 	
-	fs.existsSync(path.join(config.outDir, './__compiled')) && fs.rmSync(path.join(config.outDir, './__compiled'), { recursive: true, force: true })
-	fs.existsSync(path.join(config.outDir, './__templates')) && fs.rmSync(path.join(config.outDir, './__templates'), { recursive: true, force: true })
+	fs.existsSync(path.join(config.outDir, './assets/__compiled')) && fs.rmSync(path.join(config.outDir, './assets/__compiled'), { recursive: true, force: true })
+	fs.existsSync(path.join(config.outDir, './assets/__templates')) && fs.rmSync(path.join(config.outDir, './assets/__templates'), { recursive: true, force: true })
 
 	if (error.status) {
 		fs.existsSync(config.outDir) && fs.rmSync(config.outDir, { recursive: true, force: true })

@@ -26,7 +26,7 @@ function transfromScripts(files = [], data) {
 				__mode: Mode.build === mode ? '"production"' : '"development"'
 			}
 		})
-	
+
 		return true
 	} catch (error) {
 		setError(error.message, Tasks.scripts)
@@ -37,10 +37,10 @@ function transfromScripts(files = [], data) {
 export async function compileScripts() {
 	const { clearError } = useError()
 	const { getDataJson } = useJson()
-	
-	let files = await getFiles('./src/application/modules/*.js')
+
+	let files = await getFiles('./src/js/_entries/*.js')
 	let data = await getDataJson()
-	
+
 	let isTransformScript = transfromScripts(files, data)
 
 	if (isTransformScript) clearError(Tasks.scripts)

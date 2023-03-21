@@ -13,21 +13,21 @@ const envTemplate = nunjucks.configure({
 	autoescape: true
 })
 
-async function removePrevTemplates(prevFiles= []) {
+async function removePrevTemplates(prevFiles = []) {
 	const { config } = useConfig()
-	
+
 	let entryFiles = prevFiles.map(file => {
 		let extname = path.basename(file).replace('.twig', '.html')
 		return rdir(path.join(config.tmpDir, `./${extname}`))
 	})
 
-	let currentFiles = await getFiles('./*.html', Dirp.tmp)	
+	let currentFiles = await getFiles('./*.html', Dirp.tmp)
 	currentFiles.forEach(file => !entryFiles.includes(file) && fs.rmSync(file, { recursive: true, force: true }))
 }
 
 function setGlobals(data = []) {
 	let globals = getEnvGlobals(data)
-	
+
 	Object.keys(globals).forEach(key => {
 		envTemplate.addGlobal(key, globals[key])
 	})
@@ -41,18 +41,18 @@ function renderFile(file = '') {
 	return new Promise(resolve => {
 		nunjucks.render(file, (error, res) => {
 			let filename
-	
+
 			if (error) {
 				setError(error.message, Tasks.views)
 				resolve(false)
 				return
 			}
-	
+
 			filename = path.basename(file).replace('.twig', '.html')
 
 			if (Mode.dev === mode) fs.writeFileSync(path.join(config.tmpDir, `./${filename}`), res)
 			if (Mode.build === mode) fs.writeFileSync(path.join(config.outDir, `./assets/__templates/${filename}`), res)
-			
+
 			resolve(true)
 		})
 	})
@@ -73,14 +73,14 @@ export async function renderTemplate() {
 	const { clearError } = useError()
 	const { getDataJson } = useJson()
 
-	const files = await getFiles('./src/views/pages/*.twig')
+	const files = await getFiles('./src/views/_pages/*.twig')
 	const data = await getDataJson()
 
 	let renderTemplateFiles
-	
+
 	await removePrevTemplates(files)
 	setGlobals(data)
-	
+
 	renderTemplateFiles = await runRender(files)
 	if (renderTemplateFiles) clearError(Tasks.views)
 }

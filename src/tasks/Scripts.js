@@ -6,14 +6,14 @@ import { useMode } from '../hooks/all.js'
 
 export default async function Scripts() {
 	const { mode } = useMode()
-	const watchesFiles = ['./src/application/**/*.js', './data/*.json']
+	const watchesFiles = ['./src/js/**/*.js', './data/*.json']
 
 	clogWorking(Tasks.scripts)
 	await compileScripts()
 
 	if (mode === Mode.dev) {
 		watchFiles(watchesFiles, async done => {
-			await compileScripts()	
+			await compileScripts()
 			clogDefault(Tasks.scripts)
 			done()
 		})

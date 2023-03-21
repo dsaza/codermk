@@ -6,14 +6,14 @@ import { useMode } from '../hooks/all.js'
 
 export default async function Styles() {
 	const { mode } = useMode()
-	const watchesFiles = ['./src/theme/**/*.scss']
-	
+	const watchesFiles = ['./src/scss/**/*.scss']
+
 	clogWorking(Tasks.styles)
 	await compileStyles()
 
 	if (mode === Mode.dev) {
 		watchFiles(watchesFiles, async done => {
-			await compileStyles()	
+			await compileStyles()
 			clogDefault(Tasks.styles)
 			done()
 		})

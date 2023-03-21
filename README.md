@@ -211,7 +211,7 @@ Se encuentran `functions` previamente hechos y tienen funcionalidades extras par
 
 | Function | Descripción | Parámetros | Ejemplo |
 | ----- | ----------- | ---------- | ------- |
-| **public_url** | Reemplazará la función `url` de CSS y esta hará referencia a los archivos ubicados en la carpeta `public`. | - `linkFromPublic`: _(string)_ ruta del archivo tomando como raíz la carpeta `public` | `public_url(favicon.ico)` |
+| **public_url** | Reemplazará la función `url` de CSS y esta hará referencia a los archivos ubicados en la carpeta `public`. | - `linkFromPublic`: _(string)_ ruta del archivo tomando como raíz la carpeta `public` | `public_url('favicon.ico')` |
 | **rempi** | Se usa para usar formato `rem` como si fuera `px`. | - `sizePx`: _(number)_ valor de píxeles a utilizar | `rempi(20) // 20px` |
 
 ### SASS mixins
@@ -334,6 +334,11 @@ Todos los iconos tienen que estar dentro de la carpeta `src/icons` y tienen una 
 
 - Deben tener un `ID` incremental, este empieza en `00`, por ende el siguiente será `01`, esto hasta un máximo de `99`, el `ID` debe estar dentro de dos corchetes `[]` y se escriben al principio del nombre del archivo.
 - Seguido del `ID` y sin espacios debe ir el nombre del icono, este debe ser único y jamás repetirse, también debe ser escrito en minúsculas y los espacios se harán con un guión `-`. Por ejemplo, `[01]arrow-right.svg`.
+
+Al agregar un nuevo icono se tiene que ejecutar el siguiente comando:
+```sh
+npm run icons
+```
 
 ### ¿Cómo usar iconos SVG?
 Si se usa como clase dentro del HTML, la clase tendrá siempre el prefijo `ci--` y en seguida escribir el nombre del icono; se recomienda usar la etiqueta `span` para insertar un icono. Por ejemplo:

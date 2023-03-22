@@ -115,17 +115,17 @@ Se recomienda instalar la extensión [Twig Language](https://marketplace.visuals
 ```
 src
 └── views
+|   ├── _pages
 |   ├── components
 |   ├── layouts
-|   ├── pages
 |   └── partials
 ```
 
 Todo lo relacionado a `Nunjucks` estará ubicado en la carpeta `src/views` y se distribuirá de la siguiente manera:
 
+- `_pages`: esta es la carpeta principal ya que los archivos que se encuentren allí serán los compilados como HTML y los que conformarán la maqueta.
 - `components`: aquí se ubicarán los macros o componentes dinámicos de la maqueta.
 - `layouts`: aquí se ubicarán los esqueletos de la maqueta que heredarán las páginas.
-- `pages`: esta es la carpeta principal ya que los archivos que se encuentren allí serán los compilados como HTML y los que conformarán la maqueta.
 - `partials`: aquí se guardarán trozos de código HTML los cuales pueden ser reutilizados en cualquier parte.
 
 ### Constantes Nunjucks
@@ -181,11 +181,12 @@ Las clases de estado se pueden usar para reflejar los cambios en el estado de un
 Los estados tienen el prefijo `is-` y están escritos en mayúsculas y minúsculas. También siempre se escriben como clases contiguas. Por ejemplo `.SearchForm.is-invalid`.
 
 ### Estructura de archivos SCSS
-SASS permite crear dos tipos de extensiones para sus archivos: `.sass` y `.scss`. La estructura de archivos en este caso será con la extensión `.scss`. Todo lo relacionado a `SASS` estará ubicado en la carpeta `src/theme`.
+SASS permite crear dos tipos de extensiones para sus archivos: `.sass` y `.scss`. La estructura de archivos en este caso será con la extensión `.scss`. Todo lo relacionado a `SASS` estará ubicado en la carpeta `src/scss`.
 
 ```
 src
-└── theme
+└── scss
+|   ├── _entries
 |   ├── components
 |   ├── config
 |   ├── core
@@ -193,9 +194,10 @@ src
 |   ├── fonts
 |   ├── functions
 |   ├── mixins
-|   └── styles
+|   └── utilities
 ```
 
+- `_entries`: Esta es la carpeta principal ya que todos los archivos que se encuentren dentro de ella serán los que se compilan.
 - `components`: aquí se ubicarán los estilos para los componentes.
 - `config`: aquí se ubicarán las variables que utilizará el proyecto.
 - `core`: contiene los archivos que aplican estilos globales a la maqueta, por defecto ya contiene un [formateador de estilos](https://github.com/sindresorhus/modern-normalize), que es el mismo que utiliza [TailwindCSS](https://tailwindcss.com/).
@@ -203,7 +205,6 @@ src
 - `fonts`: Aquí se guardan todas las importaciones de fuentes que necesite la maqueta.
 - `functions`: [Ver documentación](https://sass-lang.com/documentation/at-rules/function).
 - `mixins`: [Ver documentación](https://sass-lang.com/documentation/at-rules/mixin).
-- `styles`: Esta es la carpeta principal ya que todos los archivos que se encuentren dentro de ella serán los que se compilan.
 - `utilities`: Contiene archivos que crean las clases utilitarias necesarias.
 
 ### SASS functions
@@ -297,14 +298,14 @@ Los navegadores actuales no soportan las nuevas características de Javascript y
 
 ```
 src
-└── application
+└── js
+|   ├── _entries
 |   ├── components
-|   ├── modules
 |   └── stores
 ```
 
+- `_entries`: es la carpeta principal, cada archivo `js` ubicado aquí será compilado.
 - `components`: en esta carpeta se ubicarán los componentes que la maqueta necesitará, la forma en la que se construya cada componente es de libre elección según la funcionalidad de dicho componente.
-- `modules`: es la carpeta principal, cada archivo `js` ubicado aquí será compilado.
 - `stores`: si es necesario utilizar variables globales que guarden información de la aplicación se recomienda crear `stores` los cuales leen o modifican las variables, por defecto se crea el store `mkStore`.
 
 Si es necesario se pueden crear más carpetas según el enfoque de la maqueta.

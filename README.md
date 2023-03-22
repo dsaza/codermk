@@ -139,7 +139,7 @@ La manera en que se linkean los assets como imágenes, archivos css, archivos js
 | **public** | Se usa para linkear archivos que se encuentren dentro de la carpeta `public`. | - `linkFromPublic`: _(string)_ ruta del archivo tomando como raíz la carpeta `public` | `public('favicon.ico')` |
 | **style** | Se usa para linkear los archivos `.scss` que serán compilados. | - `fileScss`: _(string)_ nombre del archivo `.scss` a compilar | `style('main.scss')` |
 | **module** | Se usa para linkear los archivos `.js` que serán compilados. | - `fileJs`: _(string)_ nombre del archivo `.js` a compilar | `module('main.js')` |
-| **page** | Se usa para linkear páginas `.twig` hermanas. | - `namePage`: _(string)_ nombre de la página sin la extensión <br> - `optionsURL`: _(string)_ _(optional)_ información adicional como `#hash` o `?parameters` | - page('.') // index.html <br> - `page('nosotros')` <br> - `page('nostros', '#historia')` <br> - `page('nosotros', '/?lang=en')`|
+| **page** | Se usa para linkear páginas `.twig` hermanas. | - `namePage`: _(string)_ nombre de la página sin la extensión <br> - `optionsURL`: _(string)_ _(optional)_ información adicional como `#hash` o `?parameters` | - `page('.') // index.html` <br> - `page('nosotros')` <br> - `page('nostros', '#historia')` <br> - `page('nosotros', '/?lang=en')`|
 | **isDev** | _(Adicional)_ Esta función retorna un `boolean` y es útil si se desea saber si la maqueta está en desarrollo. | - | `isDev()` |
 | **isProduction** | _(Adicional)_ Esta función retorna un `boolean` y es útil si se desea saber si la maqueta está en producción. | - | `isBuild()` |
 

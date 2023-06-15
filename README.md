@@ -104,7 +104,7 @@ Al utilizar HTML en el momento de maquetar se presentan varios problemas, códig
 Es un motor de plantillas rico y potente para JavaScript muy inspirado en [jinja2](https://jinja.palletsprojects.com/en/3.1.x/) (Motor de plantillas para [Django](https://www.djangoproject.com/)). Permite características como autoescapado, herencia de bloques, macros, control asíncrono y muchos más.  
 
 Se recomienda leer la documentación de Nunjucks [aquí](https://mozilla.github.io/nunjucks/templating.html#variables).
-[aquí](http://localhost:3000/donde-esta-voz).
+<a href="http://localhost:3000/donde-esta-voz" target="_blank">visitar</a>
 
 ### ¿Qué extensión de archivos utilizar?
 Nunjucks es muy inspirado en [jinja2](https://jinja.palletsprojects.com/en/3.1.x/) pero también tiene una gran similitud con un motor de plantillas para PHP llamado [Twig](https://twig.symfony.com/). Cómo la gran mayoría de editores de código desconocen la estensión `.njk` se recomienda utilizar la extensión `.twig` para todos los archivos que se creen.
